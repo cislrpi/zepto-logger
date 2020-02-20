@@ -1,0 +1,21 @@
+{
+  "name": "@cisl/zepto-logger",
+  "version": "1.0.0",
+  "description": "A tiny logger utility library",
+  "main": "logger.js",
+  "types": "logger.d.ts",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cislrpi/zepto-logger.git"
+  },
+  "keywords": [
+    "logger"
+  ],
+  "author": "Matthew Peveler <matt.peveler@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/cislrpi/zepto-logger/issues"
+  },
+  "homepage": "https://github.com/cislrpi/zepto-logger#readme",
+  "dependencies": {}
+}
