@@ -20,8 +20,16 @@ module.exports.logExpression = (msg, level) => {
     return;
   }
   const now = new Date();
-  const date = [now.getFullYear(), now.getMonth() + 1, now.getDate()].map((val) => val.toString().padStart(2, '0')).join('-');
-  const time = [now.getHours(), now.getMinutes(), now.getSeconds()].map((val) => val.toString().padStart(2, '0')).join(':');
+  const date = [
+    now.getFullYear(),
+    now.getMonth() + 1,
+    now.getDate()
+  ].map((val) => val.toString().padStart(2, '0')).join('-');
+  const time = [
+    now.getHours(),
+    now.getMinutes(),
+    now.getSeconds()
+  ].map((val) => val.toString().padStart(2, '0')).join(':');
   const datetime = `[${date} ${time}.${now.getMilliseconds().toString().padStart(3, '0').substr(0, 2)}]`;
   if (typeof msg === 'object') {
     console.log(datetime);

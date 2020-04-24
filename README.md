@@ -25,3 +25,17 @@ logExpression('This message will now print', 2);
 // can also log objects and other types, not just strings
 logExpression({foo: 1, bar: 2, baz: {a: 1, b: 2}}, 1);
 ```
+
+## API
+
+```typescript
+/**
+ * Set the log level.
+ */
+function setLogLevel(level: number): void;
+
+/**
+ * Log an expression to console at a specific level.
+ */
+function logExpression(msg: any, level?: number): void
+```

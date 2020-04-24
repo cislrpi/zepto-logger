@@ -1,5 +1,9 @@
 # CHANGELOG
 
+## v1.1.1
+
+* Add automated Github actions pipeline
+
 ## v1.1.0
 
 ### Changes
