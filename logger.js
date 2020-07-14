@@ -42,11 +42,11 @@ module.exports.logExpression = (msg, level) => {
 }
 
 /**
- * Enable or disable logExpression globally
+ * Enable or disable logExpression globally.
  *
  * @param {bool} enabled
  */
-module.exports.setEnabled = (enabled) => {
+module.exports.setLoggerEnabled = (enabled) => {
   if (typeof enabled === 'string') {
     enabled = enabled.toLowerCase() === 'true';
   }
