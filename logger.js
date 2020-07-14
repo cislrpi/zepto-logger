@@ -1,4 +1,5 @@
 let logLevel = 1;
+let isEnabled = true;
 
 /**
  * Set the log level.
@@ -16,7 +17,7 @@ module.exports.setLogLevel = (level) => {
  * @param {number} [level]
  */
 module.exports.logExpression = (msg, level) => {
-  if (level !== undefined && level > logLevel) {
+  if ((level !== undefined && level > logLevel) || isEnabled) {
     return;
   }
   const now = new Date();
@@ -38,4 +39,16 @@ module.exports.logExpression = (msg, level) => {
   else {
     console.log(`${datetime} ${msg}`);
   }
+}
+
+/**
+ * Enable or disable logExpression globally
+ *
+ * @param {bool} enabled
+ */
+module.exports.setEnabled = (enabled) => {
+  if (typeof enabled === 'string') {
+    enabled = enabled.toLowerCase() === 'true';
+  }
+  isEnabled = !!enabled;
 }
