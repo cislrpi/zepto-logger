@@ -1,13 +1,13 @@
-name: Lint
+name: Test
 
 on:
   push:
-    branches: [ master ]
+    branches: [ '*' ]
   pull_request:
-    branches: [ master ]
+    branches: [ '*' ]
 
 jobs:
-  lint:
+  test:
     runs-on: ubuntu-latest
 
     strategy:
@@ -25,3 +25,7 @@ jobs:
     - run: npm ci
 
     - run: npm run lint
+
+    - run: npm run test
+
+    - uses: codecov/codecov-action@v1

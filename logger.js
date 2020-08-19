@@ -4,6 +4,15 @@ let logLevel = 1;
 let isEnabled = true;
 
 /**
+ * Get the currently set log level.
+ *
+ * @return {number}
+ */
+module.exports.getLogLevel = () => {
+  return logLevel;
+};
+
+/**
  * Set the log level.
  *
  * @param {number} level
@@ -35,7 +44,7 @@ module.exports.logExpression = (msg, level, prefix) => {
     now.getSeconds()
   ].map((val) => val.toString().padStart(2, '0')).join(':');
   const datetime = `[${date} ${time}.${now.getMilliseconds().toString().padStart(3, '0').substr(0, 2)}]`;
-  const start = `${prefix ? prefix + '  ' : ''}${datetime}`;
+  const start = `${prefix ? prefix + ' ' : ''}${datetime}`;
   if (typeof msg === 'object') {
     console.log(start);
     console.log(JSON.stringify(msg, null, 2));
