@@ -1,3 +1,5 @@
+const chalk = require('chalk');
+
 let logLevel = 1;
 let isEnabled = true;
 
@@ -8,15 +10,16 @@ let isEnabled = true;
  */
 module.exports.setLogLevel = (level) => {
   logLevel = level;
-}
+};
 
 /**
  * Log an expression to console at a specific level.
  *
- * @param {any} msg
+ * @param {*} msg
  * @param {number} [level]
+ * @param {string|undefined} prefix
  */
-module.exports.logExpression = (msg, level) => {
+module.exports.logExpression = (msg, level, prefix) => {
   if ((level !== undefined && level > logLevel) || isEnabled) {
     return;
   }
@@ -32,14 +35,15 @@ module.exports.logExpression = (msg, level) => {
     now.getSeconds()
   ].map((val) => val.toString().padStart(2, '0')).join(':');
   const datetime = `[${date} ${time}.${now.getMilliseconds().toString().padStart(3, '0').substr(0, 2)}]`;
+  const start = `${prefix ? prefix + '  ' : ''}${datetime}`;
   if (typeof msg === 'object') {
-    console.log(datetime);
+    console.log(start);
     console.log(JSON.stringify(msg, null, 2));
   }
   else {
-    console.log(`${datetime} ${msg}`);
+    console.log(`${start} ${msg}`);
   }
-}
+};
 
 /**
  * Enable or disable logExpression globally.
@@ -51,4 +55,40 @@ module.exports.setLoggerEnabled = (enabled) => {
     enabled = enabled.toLowerCase() === 'true';
   }
   isEnabled = !!enabled;
-}
+};
+
+/**
+ * Log debug message
+ *
+ * @param {*} msg
+ */
+module.exports.debug = (msg) => {
+  this.logExpression(msg, 2, chalk.blue('[debug]'));
+};
+
+/**
+ * Log info message
+ *
+ * @param {*} msg
+ */
+module.exports.info = (msg) => {
+  this.logExpression(msg, 1, chalk.green('[info ]'));
+};
+
+/**
+ * Log warn message
+ *
+ * @param {*} msg
+ */
+module.exports.warn = (msg) => {
+  this.logExpression(msg, 0, chalk.yellow('[warn ]'));
+};
+
+/**
+ * Log error message
+ *
+ * @param {*} msg
+ */
+module.exports.error = (msg) => {
+  this.logExpression(msg, -1, chalk.red('[error]'));
+};
