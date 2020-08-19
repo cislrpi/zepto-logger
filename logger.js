@@ -1,4 +1,4 @@
-const chalk = require('chalk');
+const color = require('ansi-colors');
 
 let logLevel = 1;
 let isEnabled = true;
@@ -72,7 +72,7 @@ module.exports.setLoggerEnabled = (enabled) => {
  * @param {*} msg
  */
 module.exports.debug = (msg) => {
-  this.logExpression(msg, 2, chalk.blue('[debug]'));
+  this.logExpression(msg, 2, color.blue('[debug]'));
 };
 
 /**
@@ -81,7 +81,7 @@ module.exports.debug = (msg) => {
  * @param {*} msg
  */
 module.exports.info = (msg) => {
-  this.logExpression(msg, 1, chalk.green('[info ]'));
+  this.logExpression(msg, 1, color.green('[info ]'));
 };
 
 /**
@@ -90,7 +90,7 @@ module.exports.info = (msg) => {
  * @param {*} msg
  */
 module.exports.warn = (msg) => {
-  this.logExpression(msg, 0, chalk.yellow('[warn ]'));
+  this.logExpression(msg, 0, color.yellow('[warn ]'));
 };
 
 /**
@@ -99,5 +99,5 @@ module.exports.warn = (msg) => {
  * @param {*} msg
  */
 module.exports.error = (msg) => {
-  this.logExpression(msg, -1, chalk.red('[error]'));
+  this.logExpression(msg, -1, color.red('[error]'));
 };

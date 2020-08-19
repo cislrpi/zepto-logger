@@ -23,7 +23,7 @@
     "test": "jest"
   },
   "dependencies": {
-    "chalk": "^4.1.0"
+    "ansi-colors": "^4.1.1"
   },
   "devDependencies": {
     "eslint": "^6.8.0",
