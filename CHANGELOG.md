@@ -1,5 +1,9 @@
 # CHANGELOG
 
+## v1.2.1
+
+* Move from chalk to ansi-colors for colored output
+
 ## v1.2.0
 
 * Add new `setLoggerEnabled` function to enable / disable logger. Logger is enabled by default
