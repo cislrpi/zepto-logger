@@ -1,5 +1,9 @@
 # @cisl/zepto-logger
 
+[![npm (scoped)](https://img.shields.io/npm/v/@cisl/zepto-logger)](https://npmjs.com/package/@cisl/zepto-logger)
+[![Test](https://github.com/cislrpi/zepto-logger/workflows/Test/badge.svg?branch=master&event=push)](https://github.com/cislrpi/zepto-logger/actions?query=workflow%3ATest+branch%3Amaster+event%3Apush)
+[![codecov](https://codecov.io/gh/cislrpi/zepto-logger/branch/master/graph/badge.svg)](https://codecov.io/gh/cislrpi/zepto-logger)
+
 A minimalistic, zero-dependency logger that writes messages to the console with
 the current timestamp. Good for debugging, but for a production grade
 application, probably worth looking elsewhere.
