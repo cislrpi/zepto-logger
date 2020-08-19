@@ -2,7 +2,9 @@
 
 ## v1.2.0
 
-* Add new `setLoggerEnabled` function to enable / disable logger. Logger is enabled by default.
+* Add new `setLoggerEnabled` function to enable / disable logger. Logger is enabled by default
+* Add new `debug`, `info`, `warn`, and `error` log methods. They use levels 2, 1, 0, and -1 respectively
+* Add new `getLogLevel` method to get currently set log level
 * Fix type file not exporting function declarations
 * Fix typo in `setLogLevel` function declaration in type file
 
