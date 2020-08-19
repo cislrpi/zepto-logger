@@ -20,7 +20,7 @@ module.exports.setLogLevel = (level) => {
  * @param {string|undefined} prefix
  */
 module.exports.logExpression = (msg, level, prefix) => {
-  if ((level !== undefined && level > logLevel) || isEnabled) {
+  if ((level !== undefined && level > logLevel) || !isEnabled) {
     return;
   }
   const now = new Date();
