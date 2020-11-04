@@ -101,3 +101,12 @@ module.exports.warn = (msg) => {
 module.exports.error = (msg) => {
   this.logExpression(msg, -1, color.red('[error]'));
 };
+
+/**
+ * Log fatal message
+ *
+ * @param {*} msg
+ */
+module.exports.fatal = (msg) => {
+  this.logExpression(msg, -2, color.bold.red('[FATAL]'))
+}

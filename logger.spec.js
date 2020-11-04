@@ -113,4 +113,11 @@ describe('logger', () => {
     expect(logOutput[0]).toContain('[error]');
     expect(logOutput[0]).toMatch(/test$/);
   });
+
+  test('fatal', () => {
+    logger.fatal('test');
+    expect(logOutput).toHaveLength(1);
+    expect(logOutput[0]).toContain('[FATAL]');
+    expect(logOutput[0]).toMatch(/test$/);
+  })
 });
